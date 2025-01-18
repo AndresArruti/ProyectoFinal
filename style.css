@@ -1,0 +1,103 @@
+/* reset de CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Archivo", serif;
+    font-variation-settings: "wdth" 125;
+    font-weight: 400; 
+}
+
+.bold{
+    font-weight: 700;
+}
+
+.semibold{
+    font-weight: 550;
+}
+
+/* nav{
+    text-transform: uppercase; 
+} */
+
+.navbar-brand{
+    padding: 0;
+}
+
+.navbar-toggler{
+    border-radius: 0%;
+}
+
+.dropdown-menu{
+    border-radius: 0%;
+}
+
+
+.galeria{
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(161, 235, 87); */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 400px);
+    /* padding: 20px; */
+    /* grid-gap: 15px; */
+}
+
+.item{
+    /* height: 200px;
+    width: 100%; */
+    /* background-color: #333;
+    border: 5px solid #000; */
+    background-size: cover;
+    background-position: center;
+}
+
+.item1{
+    background-image: url(./Multimedia/what-the-track-previ.png);
+}
+
+.item2{
+    background-image: url(./Multimedia/healthy-mode-previ.png);
+}
+
+.item3{
+    background-image: url(./Multimedia/ambra-care-previ.png);
+}
+
+.item4{
+    background-image: url(./Multimedia/finca-la-marta-previ.png);
+}
+
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 18px;
+}
+
+h5{
+    font-size: 15px;
+}
+
+.about{
+    display: grid;
+}
+
+
+/* inicio de media queries */
+
+@media only screen and (min-width:768px){
+    .galeria{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 600px);
+    }
+    .about{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(1, 600px);
+    }
+}
