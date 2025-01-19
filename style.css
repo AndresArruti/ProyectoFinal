@@ -23,6 +23,14 @@ body{
     text-transform: uppercase; 
 } */
 
+h2{
+    margin-left: 20px;
+}
+
+h3{
+    margin-left: 20px;
+}
+
 .navbar-brand{
     padding: 0;
 }
@@ -88,9 +96,39 @@ h5{
     display: grid;
 }
 
+.texto-about{
+    margin: 20px;
+}
+
+
+
 /* .accordion-header{
     font-size: 20px;
 } */
+
+footer{
+    padding: 20px;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
+.redes a{
+    font-size: 35px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 10px;
+}
+
+.redes a:hover{
+    color: #8d8d8d;
+}
+
+.mb-3{
+    border-radius: 0%;
+    padding: 0px 20px 0px 20px;
+}
+
 
 
 /* inicio de media queries */
