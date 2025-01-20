@@ -25,11 +25,13 @@ body{
 
 h2{
     margin-left: 20px;
+    padding-top: 40px;
 }
 
 h3{
     margin-left: 20px;
 }
+
 
 .navbar-brand{
     padding: 0;
@@ -100,6 +102,11 @@ h5{
     margin: 20px;
 }
 
+.accordion-button{
+    font-family: "Archivo", serif;
+    font-variation-settings: "wdth" 125;
+    font-weight: 400;
+}
 
 
 /* .accordion-header{
@@ -142,4 +149,8 @@ footer{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1, 600px);
     }
+
+    /* .accordion{
+        grid-template-columns: 1fr 1fr;
+    } */
 }
