@@ -1,0 +1,16 @@
+$color-map: (
+    primari: #5F22C1,
+    secondary: #00C3A3,
+    tertiary: #F9F871
+);
+
+@each $name, $color in $color-map {
+    .#{$name}-bg {
+        background-color: $color;
+    }
+}
+
+
+// $color1: #5F22C1;
+// $color2: #00C3A3;
+// $color3: #F9F871;

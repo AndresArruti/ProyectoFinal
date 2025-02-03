@@ -22,6 +22,18 @@
   padding-left: 20px;
 }
 
+.primari-bg {
+  background-color: #5F22C1;
+}
+
+.secondary-bg {
+  background-color: #00C3A3;
+}
+
+.tertiary-bg {
+  background-color: #F9F871;
+}
+
 body {
   font-family: font-family "Archivo", serif;
   font-variation-settings: "wdth" 125;
@@ -70,21 +82,51 @@ h3 {
 .galeria {
   width: 100%;
   height: auto;
-  /* background-color: rgb(161, 235, 87); */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 400px);
-  /* padding: 20px; */
-  /* grid-gap: 15px; */
 }
 
 .item {
-  /* height: 200px;
-  width: 100%; */
-  /* background-color: #333;
-  border: 5px solid #000; */
   background-size: cover;
   background-position: center;
+  position: relative;
+  transition: opacity 0.3s ease;
+}
+
+.galeria .item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.galeria .item:hover::after {
+  opacity: 0.8;
+}
+
+.item-title {
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.galeria .item:hover .item-title {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(-10px);
 }
 
 .item1 {
