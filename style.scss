@@ -7,8 +7,27 @@
     box-sizing: border-box;
 }
 
+@import "keyframes";
+
+// COLORES
+$color1: #5F22C1;
+$color2: #00C3A3;
+$color3: #F9F871;
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+
+// GRADIENTS
+$gradient-background: linear-gradient(to right, #5f22c1, #0069ed, #0090e7, #00acc4, #00c3a3);
+
+
+// FUENTES variables
+$font-archivo: font-family "Archivo", serif;
+// $font-bold: font-weight 700;
+// $font-semi-bold: font-weight 550;
+
+
 body{
-    font-family: "Archivo", serif;
+    font-family: $font-archivo;
     font-variation-settings: "wdth" 125;
     font-weight: 400; 
 }
@@ -21,9 +40,11 @@ body{
     font-weight: 550;
 }
 
+
 /* nav{
     text-transform: uppercase; 
 } */
+
 
 h2{
     margin-left: 20px;
@@ -34,6 +55,12 @@ h3{
     margin-left: 20px;
 }
 
+.title{
+    width: 100%;
+    height: 90px;
+    background-image: $gradient-background;
+    color: $color-white;
+}
 
 .navbar-brand{
     padding: 0;
@@ -118,13 +145,13 @@ h5{
 footer{
     padding: 20px;
     text-align: center;
-    background-color: black;
-    color: #fff;
+    background-color: $color-black;
+    color: $color-white;
 }
 
 .redes a{
     font-size: 35px;
-    color: #fff;
+    color: $color-white;
     text-decoration: none;
     letter-spacing: 10px;
 }
@@ -149,10 +176,11 @@ footer{
     }
     .about{
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(1, 600px);
+        grid-template-rows: repeat(1, 500px);
     }
 
     /* .accordion{
         grid-template-columns: 1fr 1fr;
     } */
 }
+
