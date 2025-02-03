@@ -158,11 +158,19 @@ h5 {
 }
 
 .about {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.foto-about img {
+  width: 100%;
+  height: auto;
 }
 
 .texto-about {
   margin: 20px;
+  padding: 20px;
 }
 
 .accordion-button {
@@ -204,8 +212,17 @@ footer {
     grid-template-rows: repeat(2, 600px);
   }
   .about {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(1, 500px);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foto-about {
+    flex: 1;
+    max-width: 50%;
+  }
+  .texto-about {
+    flex: 1;
+    max-width: 50%;
   }
   /* .accordion{
       grid-template-columns: 1fr 1fr;
