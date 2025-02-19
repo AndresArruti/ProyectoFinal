@@ -22,14 +22,17 @@ $gradient-background: linear-gradient(to right, #5f22c1, #0069ed, #0090e7, #00ac
 
 
 // FUENTES variables
-$font-archivo: font-family "Archivo",
-serif;
+$font-archivo: "Archivo", serif;
 // $font-bold: font-weight 700;
 // $font-semi-bold: font-weight 550;
 
+:root {
+    --bs-body-font-family: #{$font-archivo};
+}
+
 
 body {
-    font-family: $font-archivo;
+    font-family: $font-archivo !important;
     font-variation-settings: "wdth"125;
     font-weight: 400;
 }
@@ -41,11 +44,6 @@ body {
 .semibold {
     font-weight: 550;
 }
-
-
-/* nav{
-    text-transform: uppercase; 
-} */
 
 
 h2 {
@@ -71,6 +69,18 @@ h3 {
 .navbar-toggler {
     border-radius: 0%;
 }
+
+.carousel {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
 
 .dropdown-menu {
     border-radius: 0%;
@@ -144,7 +154,6 @@ h3 {
 }
 
 
-
 h3 {
     font-size: 20px;
 }
@@ -160,17 +169,37 @@ h5 {
 .about {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+}
+
+.foto-about {
+    width: 100%;
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .foto-about img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .texto-about {
+    max-width: 600px;
+    text-align: left;
     margin: 20px;
     padding: 20px;
+}
+
+.accordion-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
 }
 
 .accordion-button {
@@ -179,12 +208,37 @@ h5 {
     font-weight: 400;
 }
 
+.form-container {
+    margin-top: 30px;
+    label {
+        text-align: left;
+        display: block;
+    }
 
-/* .accordion-header{
-    font-size: 20px;
-} */
+    .button-container {
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    button {
+        background-color: $color1;
+        color: white;
+        font-family: $font-archivo !important;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+        transition: background 0.3s;
+    
+        &:hover {
+            background-color: darken($color2, 10%);
+        }
+    }    
+}
 
 footer {
+    margin-top: 20px;
     padding: 20px;
     text-align: center;
     background-color: $color-black;
@@ -214,12 +268,9 @@ footer {
 }
 
 
-
-
-
 /* inicio de media queries */
 
-@media only screen and (min-width:850px) {
+@media only screen and (min-width:768px) {
     .galeria {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(2, 600px);
@@ -227,22 +278,44 @@ footer {
 
     .about {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
     .foto-about {
         flex: 1;
         max-width: 50%;
+        height: 400px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
     }
+    
+    .foto-about img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
 
     .texto-about {
         flex: 1;
         max-width: 50%;
     }
+}
 
+@media (min-width: 1024px) {
+    .accordion-container {
+        width: 80%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+    }
 
-    /* .accordion{
-        grid-template-columns: 1fr 1fr;
-    } */
+    .form-container {
+        width: 80%;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0;
+    }
 }

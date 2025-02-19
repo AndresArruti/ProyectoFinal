@@ -34,8 +34,12 @@
   background-color: #F9F871;
 }
 
+:root {
+  --bs-body-font-family: Archivo, serif;
+}
+
 body {
-  font-family: font-family "Archivo", serif;
+  font-family: "Archivo", serif !important;
   font-variation-settings: "wdth" 125;
   font-weight: 400;
 }
@@ -48,9 +52,6 @@ body {
   font-weight: 550;
 }
 
-/* nav{
-    text-transform: uppercase; 
-} */
 h2 {
   margin-left: 20px;
   padding-top: 40px;
@@ -73,6 +74,18 @@ h3 {
 
 .navbar-toggler {
   border-radius: 0%;
+}
+
+.carousel {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .dropdown-menu {
@@ -160,17 +173,39 @@ h5 {
 .about {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+}
+
+.foto-about {
+  width: 100%;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .foto-about img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .texto-about {
+  max-width: 600px;
+  text-align: left;
   margin: 20px;
   padding: 20px;
+}
+
+.accordion-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 .accordion-button {
@@ -179,10 +214,34 @@ h5 {
   font-weight: 400;
 }
 
-/* .accordion-header{
-    font-size: 20px;
-} */
+.form-container {
+  margin-top: 30px;
+}
+.form-container label {
+  text-align: left;
+  display: block;
+}
+.form-container .button-container {
+  text-align: right;
+  padding-right: 20px;
+}
+.form-container button {
+  background-color: #5F22C1;
+  color: white;
+  font-family: "Archivo", serif !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.form-container button:hover {
+  background-color: #009078;
+}
+
 footer {
+  margin-top: 20px;
   padding: 20px;
   text-align: center;
   background-color: rgb(0, 0, 0);
@@ -197,7 +256,7 @@ footer {
 .btn {
   border-radius: 0%;
   padding: px 20px 0px 20px;
-  font-family: font-family "Archivo", serif;
+  font-family: "Archivo", serif;
 }
 
 .redes a {
@@ -212,25 +271,46 @@ footer {
 }
 
 /* inicio de media queries */
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 768px) {
   .galeria {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, 600px);
   }
   .about {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
   .foto-about {
     flex: 1;
     max-width: 50%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .foto-about img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .texto-about {
     flex: 1;
     max-width: 50%;
   }
-  /* .accordion{
-      grid-template-columns: 1fr 1fr;
-  } */
+}
+@media (min-width: 1024px) {
+  .accordion-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .form-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
