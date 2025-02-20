@@ -22,7 +22,8 @@ $gradient-background: linear-gradient(to right, #5f22c1, #0069ed, #0090e7, #00ac
 
 
 // FUENTES variables
-$font-archivo: "Archivo", serif;
+$font-archivo: "Archivo",
+serif;
 // $font-bold: font-weight 700;
 // $font-semi-bold: font-weight 550;
 
@@ -51,9 +52,6 @@ h2 {
     padding-top: 40px;
 }
 
-h3 {
-    margin-left: 20px;
-}
 
 .title {
     width: 100%;
@@ -196,10 +194,69 @@ h5 {
     padding: 20px;
 }
 
+// Sección de idiomas
+.languages {
+    margin-top: 2rem;
+    width: 80%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+
+    h3 {
+        text-align: left;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .language {
+        margin-bottom: 1rem;
+
+        span {
+            display: inline-block;
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: $color2;
+            border-radius: 0;
+            overflow: hidden;
+
+            .progress {
+                height: 100%;
+                background-color: $color1;
+                border-radius: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                animation: fill-bar 2s ease-in-out forwards;
+            }
+        }
+    }
+}
+
+.work-experience {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    h3 {
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    > h3 {
+        margin-top: 20px;
+    }
+}
+
 .accordion-container {
     width: 100%;
     max-width: 100%;
-    padding: 0 20px;
+    padding: 0;
 }
 
 .accordion-button {
@@ -208,8 +265,14 @@ h5 {
     font-weight: 400;
 }
 
+
 .form-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     margin-top: 30px;
+    padding: 0 20px;
+
     label {
         text-align: left;
         display: block;
@@ -230,11 +293,11 @@ h5 {
         border-radius: 0;
         cursor: pointer;
         transition: background 0.3s;
-    
+
         &:hover {
             background-color: darken($color2, 10%);
         }
-    }    
+    }
 }
 
 footer {
@@ -250,7 +313,7 @@ footer {
     padding: 0px 20px 0px 20px;
 }
 
-.btn{
+.btn {
     border-radius: 0%;
     padding: px 20px 0px 20px;
     font-family: $font-archivo;
@@ -277,45 +340,32 @@ footer {
     }
 
     .about {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .foto-about {
-        flex: 1;
-        max-width: 50%;
-        height: 400px;
-        overflow: hidden;
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
     }
-    
-    .foto-about img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
 
-    .texto-about {
-        flex: 1;
-        max-width: 50%;
+    .foto-about, .texto-about {
+        flex: 1 1 45%;
     }
 }
 
-@media (min-width: 1024px) {
-    .accordion-container {
-        width: 80%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0;
+@media (min-width: 1440px) {
+    .languages .language-container {
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    
+    .languages .language {
+        flex: 1;
+        min-width: auto;
     }
 
-    .form-container {
-        width: 80%;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0;
+    .languages .language span {
+        font-size: 0.9rem;
     }
 }
